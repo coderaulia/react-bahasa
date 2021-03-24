@@ -2,15 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+// Komponen Square ini akan me-render semua return value didalamnya, yaitu sebuah button dengan class square. (react menggunakan className utk deklarasi class), dan juga mendapatkan props yg dilemparkan dari Board
 class Square extends React.Component {
 	render() {
-		return <button className="square">{/* TODO */}</button>;
+		return <button className="square">{this.props.value}</button>;
 	}
 }
 
+//Komponen ini akan me-render Square berjumlah 9
 class Board extends React.Component {
 	renderSquare(i) {
-		return <Square />;
+		return <Square value={i} />;
 	}
 
 	render() {
