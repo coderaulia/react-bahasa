@@ -10,3 +10,7 @@ Singkatnya, dalam repo ini saya akan membedah tutorial dari laman resmi React JS
 
 Sebelumnya saya berpikir bahwa React adalah sebuah framework. Ternyata React adalah sebuah library javascript yang deklaratif, efisien, dan fleksibel untuk membangun antarmuka pengguna. React memungkinkan kita untuk membuat antarmuka kompleks dari kumpulan kode yang kecil dan terisolasi yang disebut “komponen".
 Untuk membuat komponen kita perlu mendefinisikan sebuah Class yang memanggil subkelas bernama "React.Component". Atau jika anda menggunakan Visual Studio Code, anda dapat menggunakan ekstensi ES7 Reach/Redux/GraphQL/React-Native snippets, lalu menjalankan snippet "rfc".
+
+## Dev Tools
+
+Kita dapat menggunakan sebuah ekstensi browser yang bernama React Devtools. Tools ini memungkinkan kita untuk mengecek props dan state dari sebuah komponen React.

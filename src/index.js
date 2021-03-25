@@ -15,7 +15,7 @@ class Square extends React.Component {
 
 	render() {
 		return (
-			// mengubah method render Square untuk menampilkan nilai state saat ini ketika diklik, yaitu mengubah value menjadi "X"
+			// Dengan memanggil this.setState dari handler onClick pada method render Square, kita memberi tahu React untuk me-render ulang Square setiap <button> diklik. Setelah diperbarui, this.state.value dari Square akan menjadi 'X', jadi kita akan melihat X pada papan permainan. Jika Anda mengklik salah satu Square, maka akan muncul X.
 			<button className="square" onClick={() => this.setState({ value: "X" })}>
 				{this.state.value}
 			</button>
@@ -25,8 +25,18 @@ class Square extends React.Component {
 
 //Komponen ini akan me-render Square berjumlah 9
 class Board extends React.Component {
+	// menambahkan konstruktor ke Board dan menginisialisasi state dari Board berisi array dengan 9 null. Sembilan nilai ini melambangkan 9 persegi
+	constructor(props) {
+		super(props);
+		this.state = {
+			squares: Array(9).fill(null),
+		};
+	}
+
 	renderSquare(i) {
-		return <Square value={i} />;
+		//menggunakan mekanisme pengoperan prop lagi. Kita akan memodifikasi Board untuk memberi instruksi pada setiap Square untuk mengubah nilai saat ini ('X', 'O', atau null).
+		//Setiap Square akan menerima prop value yang dapat berupa 'X', 'O', atau null untuk persegi kosong.
+		return <Square value={this.state.squares[i]} />;
 	}
 
 	render() {
