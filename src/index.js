@@ -3,9 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 // Komponen Square ini akan me-render semua return value didalamnya, yaitu sebuah button dengan class square. (react menggunakan className utk deklarasi class), dan juga mendapatkan props yg dilemparkan dari Board
+// Menambahkan onCLick function ketika button diclick oleh user
 class Square extends React.Component {
 	render() {
-		return <button className="square">{this.props.value}</button>;
+		return (
+			<button className="square" onClick={() => alert("click")}>
+				{this.props.value}
+			</button>
+		);
 	}
 }
 
