@@ -31,14 +31,20 @@ class Board extends React.Component {
 		super(props);
 		this.state = {
 			squares: Array(9).fill(null),
+			// xIsNext (sebuah boolean) akan diubah nilainya untuk menentukan siapa yang akan membuat langkah selanjutnya dan state dari permainan akan disimpan
+			xIsNext: true,
 		};
 	}
 
 	//Ketika kita mencoba untuk mengklik salah satu Square, kita seharusnya akan mendapatkan sebuah pesan error karena kita belum mendefinisikan handleClick. Sekarang kita akan menambahkan handleClick pada kelas Board:
 	handleClick(i) {
 		const squares = this.state.squares.slice();
-		squares[i] = "X";
-		this.setState({ squares: squares });
+		// “X” dan “O” akan mendapatkan giliran setiap satu langkah selesai.
+		squares[i] = this.state.xIsNext ? "X" : "O";
+		this.setState({
+			squares: squares,
+			xIsNext: !this.state.xIsNext,
+		});
 	}
 
 	renderSquare(i) {
@@ -54,7 +60,8 @@ class Board extends React.Component {
 	}
 
 	render() {
-		const status = "Next player: X";
+		// teks menampilkan pemain mana yang sedang mendapat giliran selanjutnya
+		const status = "Next player: " + (this.state.xIsNext ? "X" : "O");
 
 		return (
 			<div>
