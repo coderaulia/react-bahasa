@@ -17,8 +17,8 @@ class Square extends React.Component {
 	render() {
 		return (
 			// Dengan memanggil this.setState dari handler onClick pada method render Square, kita memberi tahu React untuk me-render ulang Square setiap <button> diklik. Setelah diperbarui, this.state.value dari Square akan menjadi 'X', jadi kita akan melihat X pada papan permainan. Jika Anda mengklik salah satu Square, maka akan muncul X.
-			<button className="square" onClick={() => this.setState({ value: "X" })}>
-				{this.state.value}
+			<button className="square" onClick={() => this.props.onClick()}>
+				{this.props.value}
 			</button>
 		);
 	}
@@ -32,6 +32,13 @@ class Board extends React.Component {
 		this.state = {
 			squares: Array(9).fill(null),
 		};
+	}
+
+	//Ketika kita mencoba untuk mengklik salah satu Square, kita seharusnya akan mendapatkan sebuah pesan error karena kita belum mendefinisikan handleClick. Sekarang kita akan menambahkan handleClick pada kelas Board:
+	handleClick(i) {
+		const squares = this.state.squares.slice();
+		squares[i] = "X";
+		this.setState({ squares: squares });
 	}
 
 	renderSquare(i) {
