@@ -5,13 +5,14 @@ import "./index.css";
 // Komponen Square ini akan me-render semua return value didalamnya, yaitu sebuah button dengan class square. (react menggunakan className utk deklarasi class), dan juga mendapatkan props yg dilemparkan dari Board
 // Menambahkan onCLick function ketika button diclick oleh user
 class Square extends React.Component {
-	constructor(props) {
-		// memanggil super ketika mendefinisikan konstruktor dari sebuah subkelas. Semua kelas komponen React yang memiliki constructor harus dimulai dengan super(props).
-		super(props);
-		this.state = {
-			value: null,
-		};
-	}
+	// constructor(props) {
+	// 	// memanggil super ketika mendefinisikan konstruktor dari sebuah subkelas. Semua kelas komponen React yang memiliki constructor harus dimulai dengan super(props).
+	// 	super(props);
+	// 	this.state = {
+	// 		value: null,
+	// 	};
+	// }
+	// Karena Square sudah tidak menyimpan state dari permainan
 
 	render() {
 		return (
@@ -36,7 +37,13 @@ class Board extends React.Component {
 	renderSquare(i) {
 		//menggunakan mekanisme pengoperan prop lagi. Kita akan memodifikasi Board untuk memberi instruksi pada setiap Square untuk mengubah nilai saat ini ('X', 'O', atau null).
 		//Setiap Square akan menerima prop value yang dapat berupa 'X', 'O', atau null untuk persegi kosong.
-		return <Square value={this.state.squares[i]} />;
+		return (
+			<Square
+				value={this.state.squares[i]}
+				//mengubah perilaku Square saat diklik, karena state dianggap private dalam suatu komponen, kita akan memberikan sebuah fungsi dari Board ke Square
+				onClick={() => this.handleClick(i)}
+			/>
+		);
 	}
 
 	render() {
