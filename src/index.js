@@ -5,10 +5,19 @@ import "./index.css";
 // Komponen Square ini akan me-render semua return value didalamnya, yaitu sebuah button dengan class square. (react menggunakan className utk deklarasi class), dan juga mendapatkan props yg dilemparkan dari Board
 // Menambahkan onCLick function ketika button diclick oleh user
 class Square extends React.Component {
+	constructor(props) {
+		// memanggil super ketika mendefinisikan konstruktor dari sebuah subkelas. Semua kelas komponen React yang memiliki constructor harus dimulai dengan super(props).
+		super(props);
+		this.state = {
+			value: null,
+		};
+	}
+
 	render() {
 		return (
-			<button className="square" onClick={() => alert("click")}>
-				{this.props.value}
+			// mengubah method render Square untuk menampilkan nilai state saat ini ketika diklik, yaitu mengubah value menjadi "X"
+			<button className="square" onClick={() => this.setState({ value: "X" })}>
+				{this.state.value}
 			</button>
 		);
 	}
