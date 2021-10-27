@@ -11,3 +11,5 @@ Pada dasarnya, komponen terbuat dari sebuah fungsi, yang berisi return value ber
 Keuntungan menggunakan komponen adalah reusability, yaitu dapat digunakan berulang kali.
 
 Selain itu, kita dapat melemparkan data yang biasa disebut `props`, dari induk atau parent element ke tiap komponen. Misal dari App -> item="Hello" -> component `<List Data text={item}>` -> `<li>{props.item}</li>`. Dapat dilihat di `App.js` dan `components/ExpenseItems.js`.
+
+Tentu saja, kita dapat memecah kembali komponen ke sebuah sub-komponen, seperti pada contoh Expense Item, kita akan memecahkan 1 komponen lagi yaitu Expense Date. Yaitu komponen untuk menampilkan tanggal.
