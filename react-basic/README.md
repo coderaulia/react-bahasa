@@ -54,3 +54,13 @@ Maka data yang sebelumnya hanya dapat kita tampilkan melalui AddExpense.js, kini
 Metode ini nantinya akan banyak digunakan untuk sebuah konsep bernama Lifting State Up. Artinya, kita dapat mengirimkan data ke parent element, baik akan digunakan oleh parent itu sendiri atau dikirimkan lagi ke komponen lain. Karena biasanya tidak dianjurkan untuk menggunakan data/state antar komponen.
 
 Contohnya pada App.js kita telah memanggil AddExpense.js dan Expenses.js, sehingga keduanya dapat berinteraksi nantinya melalui App.js, tidak secara langsung.
+
+## Melakukan Rendering Data (List) & Conditional Content
+
+Pada Expense.js, kita melakukan rendering data dari props yang dikirimkan oleh `App.js` secara hard-coded, atau statis. Bayangkan jika data bertambah, atau datanya berjumlah ratusan. Akan sangat tidak efisien tenttunya.
+
+Maka dari itu, kita dapat memanfaatkan fitur bawaan dari Javascript yaitu Map. Contoh penggunaannya dapat dilihat di `Expenses.js`.
+
+Selain itu, kita juga dapat menambahkan data yang telah diinput ke Expenses.js melalui `App.js`. Pertama kita perlu mengeluarkan dummy data ke luar `const App` (dapat dilihat di App.js). Tambahkan juga useState dengan value dari dummy data ini.
+
+Lalu ubah addExpenseHandler dengan menambahkan previous state menggunakan rest operator, dan tentunya data yang telah diinput. Maka data yang baru diinput akan masuk ke dalam `Expenses.js`.
