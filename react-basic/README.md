@@ -40,3 +40,17 @@ Sebagai contoh kita akan membuat sebuah komponen form untuk menambahkan Expense 
 Untuk mengatur onSubmit event pada form, kita dapat membuat sebuah fungsi yang dapat mengatur onSubmit, mencegah refresh dengan preventDefault function, dan mengambil data inputan dari form. Dapat dilihat di `ExpenseForm.js`.
 
 Selanjutnya, kita dapat mengatur two way binding data. Yaitu ketika sebuah form disubmit, maka akan mengosongkan form menjadi semula tanpa refresh. Dapat dilakukan dengan mengatur value di masing-masing input menjadi state semula (misal: enteredTitle). Lalu pada fungsi onSubmit, ubah state yang bersangkutan menjadi `setEnteredTitle('');` di bagian paling bawah fungsi.
+
+### Mengirim data dari Child ke Parent Component
+
+Biasanya kita dapat melemparkan props dari Parent element ke Child element untuk digunakan. Namun dalam beberapa kasus, kita memerlukan untuk melakukan sebaliknya.
+
+Pertama kita dapat membuat sebuah event di AddExpense.js pada bagian komponen ExpenseForm seperti ini ` <ExpenseForm onSaveExpenseData={saveExpenseHandler} />`. Selanjutnya buat sebuah fungsi saveExpenseHandler dapat dilihat di `AddExpense.js`. Lalu pada ExpenseForm.js kita perlu menggunakan props untuk memanggil fungsi yang dikirimkan oleh AddExpense.js: `props.onSaveExpenseData(expenseData);`.
+
+Naik satu parent lagi, pada App.js kita akan mencoba mengambil data dari AddExpense.js yang sebelumnya dikirimkan dari ExpenseForm.js. Ubah: `<AddExpense onAddExpense={addExpenseHandler} />`. Lalu buat fungsi addExpenseHandler: `const addExpenseHandler = (expense) => {console.log("in App.js"); console.log(expense);};`.
+
+Maka data yang sebelumnya hanya dapat kita tampilkan melalui AddExpense.js, kini dapat diakses oleh App.js yang selanjutnya bisa diproses ke database dsb. (akan dibahas pada bagian selanjutnya).
+
+Metode ini nantinya akan banyak digunakan untuk sebuah konsep bernama Lifting State Up. Artinya, kita dapat mengirimkan data ke parent element, baik akan digunakan oleh parent itu sendiri atau dikirimkan lagi ke komponen lain. Karena biasanya tidak dianjurkan untuk menggunakan data/state antar komponen.
+
+Contohnya pada App.js kita telah memanggil AddExpense.js dan Expenses.js, sehingga keduanya dapat berinteraksi nantinya melalui App.js, tidak secara langsung.
