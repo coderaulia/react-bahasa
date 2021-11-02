@@ -36,3 +36,7 @@ Biasanya kita perlu mendefinisikan default value, seperti `const [title, setTitl
 Selanjutnya kita dapat mengupdate title pada event onClick tadi dengan menggunakan `setTitle('value yang diinginkan')`. Maka akan mengupdate perubahan dan me-render ulang JSX pada komponen tersebut.
 
 Sebagai contoh kita akan membuat sebuah komponen form untuk menambahkan Expense Item. Lalu akan melakukan listen event `onChange` pada tiap form input. Dapat dilihat di file `components/AddExpense/Addexpense.js` dan `ExpenseForm.js`.
+
+Untuk mengatur onSubmit event pada form, kita dapat membuat sebuah fungsi yang dapat mengatur onSubmit, mencegah refresh dengan preventDefault function, dan mengambil data inputan dari form. Dapat dilihat di `ExpenseForm.js`.
+
+Selanjutnya, kita dapat mengatur two way binding data. Yaitu ketika sebuah form disubmit, maka akan mengosongkan form menjadi semula tanpa refresh. Dapat dilakukan dengan mengatur value di masing-masing input menjadi state semula (misal: enteredTitle). Lalu pada fungsi onSubmit, ubah state yang bersangkutan menjadi `setEnteredTitle('');` di bagian paling bawah fungsi.
