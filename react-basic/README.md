@@ -64,3 +64,5 @@ Maka dari itu, kita dapat memanfaatkan fitur bawaan dari Javascript yaitu Map. C
 Selain itu, kita juga dapat menambahkan data yang telah diinput ke Expenses.js melalui `App.js`. Pertama kita perlu mengeluarkan dummy data ke luar `const App` (dapat dilihat di App.js). Tambahkan juga useState dengan value dari dummy data ini.
 
 Lalu ubah addExpenseHandler dengan menambahkan previous state menggunakan rest operator, dan tentunya data yang telah diinput. Maka data yang baru diinput akan masuk ke dalam `Expenses.js`.
+
+Dalam proses rendering list item yang baru diinput, perlu kita definisikan sebuah "Key" untuk membedakan satu item dengan yang lain. Contohnya pada Expenses.js, kita dapat mendefinisikan key dengan id dari expense `key={expense.id}`.
