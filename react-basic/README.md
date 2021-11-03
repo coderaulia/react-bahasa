@@ -66,3 +66,11 @@ Selain itu, kita juga dapat menambahkan data yang telah diinput ke Expenses.js m
 Lalu ubah addExpenseHandler dengan menambahkan previous state menggunakan rest operator, dan tentunya data yang telah diinput. Maka data yang baru diinput akan masuk ke dalam `Expenses.js`.
 
 Dalam proses rendering list item yang baru diinput, perlu kita definisikan sebuah "Key" untuk membedakan satu item dengan yang lain. Contohnya pada Expenses.js, kita dapat mendefinisikan key dengan id dari expense `key={expense.id}`.
+
+### Conditional Content
+
+Setelah melakukan filter, tentunya akan ada pilihan dari filter yang tidak memiliki data Expenses. Contohnya data 2019. Untuk itu, kita dapat melakukan filter lagi untuk mengetahui apakah hasil filter dari tahun 2019, 2020, 2021 dst terdapat data atau tidak.
+
+Dapat dilakukan dengan metode ternary expression seperti `{filteredExpenses.length === 0 ? ( <p>Tidak ada data.</p>) : ( filteredExpenses.map((expense) => ()}`.
+
+Atau jika ingin lebih simple dapat menggunakan `{filteredExpenses.length === 0 && <p>Tidak ada data.</p>}{{filteredExpenses.length > 0 && filteredExpenses.map((expense) => ()}`.

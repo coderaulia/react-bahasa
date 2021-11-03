@@ -22,15 +22,19 @@ function Expenses(props) {
 					selected={filter}
 					onChangeFilter={filterChangeHandler}
 				/>
-				{/* Mengganti data map menjadi data dari filterExpenses */}
-				{filteredExpenses.map((expense) => (
-					<ExpenseItem
-						key={expense.id}
-						title={expense.title}
-						amount={expense.amount}
-						date={expense.date}
-					/>
-				))}
+				{/* Conditional jika data tidak tersedia */}
+				{filteredExpenses.length === 0 && (
+					<h2 className='expenses-list__fallback'>Tidak ada data.</h2>
+				)}
+				{filteredExpenses.length > 0 &&
+					filteredExpenses.map((expense) => (
+						<ExpenseItem
+							key={expense.id}
+							title={expense.title}
+							amount={expense.amount}
+							date={expense.date}
+						/>
+					))}
 			</Card>
 		</>
 	);
