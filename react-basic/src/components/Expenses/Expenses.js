@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "../UI/Card";
 import ExpenseFilter from "./ExpenseFilter";
 import ExpenseItem from "./ExpenseItem";
+import ExpensesChart from "./ExpensesChart";
 import "./Expenses.css";
 
 function Expenses(props) {
@@ -22,6 +23,7 @@ function Expenses(props) {
 					selected={filter}
 					onChangeFilter={filterChangeHandler}
 				/>
+				<ExpensesChart expenses={filteredExpenses} />
 				{/* Conditional jika data tidak tersedia */}
 				{filteredExpenses.length === 0 && (
 					<h2 className='expenses-list__fallback'>Tidak ada data.</h2>
