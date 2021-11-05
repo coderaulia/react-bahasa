@@ -74,3 +74,21 @@ Setelah melakukan filter, tentunya akan ada pilihan dari filter yang tidak memil
 Dapat dilakukan dengan metode ternary expression seperti `{filteredExpenses.length === 0 ? ( <p>Tidak ada data.</p>) : ( filteredExpenses.map((expense) => ()}`.
 
 Atau jika ingin lebih simple dapat menggunakan `{filteredExpenses.length === 0 && <p>Tidak ada data.</p>}{{filteredExpenses.length > 0 && filteredExpenses.map((expense) => ()}`.
+
+## Styling dalam React
+
+React memungkinkan developer untuk membuat sebuah pengkondisian tak hanya dalam logic aplikasi, namun juga dalam proses styling komponen.
+
+Ada beberapa cara populer untuk membuat styling dalam React. Antara lain dengan membuat style CSS inline, dan menggunakan dynamic CSS Class.
+
+### Dynamic inline style
+
+Metode ini dapat dilakukan dengan cara melakukan pengondisian, ketika suatu kondisi state terpenuhi maka akan memilih salah satu pilihan yang diberikan. Contohnya: `{expense.amount > 100 ? {color: 'red'} : {color: 'black'}}`. Dan juga dapat dilakukan dengan menggunakan ternary expression: `{expense.amount > 100 ? 'red' : 'black'}`.
+
+Contoh lebih lengkap dapat dilihat di folder example -> `InlineStyling.js`.
+
+### Dynamic CSS Classes
+
+Selain dengan inline style, kita dapat menggunakan CSS Class untuk membuat styling yang lebih dinamis. Contohnya: `<p className={expense.amount > 100 ? 'red-text' : 'black-text'}>`. Cara lainnya dapat menggunakan concatenate string seperti ini: `<div className={`form-control ${!isValid ? 'invalid' : ''}`}>`.
+
+Selengkapnya dapat dilihat di folder example -> `DynamicClass.js`.
