@@ -92,3 +92,15 @@ Contoh lebih lengkap dapat dilihat di folder example -> `InlineStyling.js`.
 Selain dengan inline style, kita dapat menggunakan CSS Class untuk membuat styling yang lebih dinamis. Contohnya: `<p className={expense.amount > 100 ? 'red-text' : 'black-text'}>`. Cara lainnya dapat menggunakan concatenate string seperti ini: `<div className={`form-control ${!isValid ? 'invalid' : ''}`}>`.
 
 Selengkapnya dapat dilihat di folder example -> `DynamicClass.js`.
+
+## Styled Components
+
+Styled Components adalah sebuah 3rd party library yang memungkinkan developer untuk membuat sebuah komponen yang lebih dinamis. Untuk menginstallnya dapat menjalankan NPM Install `npm install --save styled-components` atau menggunakan Yarn `yarn add styled-components`.
+
+Dengan menggunakan library ini, memungkinkan kita untuk membuat style atau class dari komponen ke scope yang lebih kecil, sehingga tidak akan mengganggu komponen lain yang memiliki class yang sama. Dan memudahkan dalam proses development jika aplikasi dan tim yang sangat besar.
+
+Langkah selanjutnya adalah mengimport library tersebut ke dalam file komponen yang akan kita buat. Contohnya: `import styled from 'styled-components';`. Lalu dapat menginisiasi styled components dengan cara: `const StyledDiv = styled.div`.
+
+Anda dapat melihat contohnya pada folder example -> `StyledButton.js`.
+
+Selain itu kita juga dapat melakukan pengondisian pada Styled Components secara langsung pada CSS properties. Contohnya `color: ${(props) => (props.invalid ? "red" : "black")};`. Selengkapnya dapat dilihat di folder example -> `StyledProps.js`.
