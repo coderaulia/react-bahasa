@@ -6,7 +6,9 @@ Selanjutnya, akan diisi sebagai catatan dari kelas premium Udemy.
 
 ## Basic Javascript
 
-Sejak React JS adalah sebuah library Javascript, maka dari itu perlu untuk kita memahami secara komprehensif sintaks dan penggunaan Javascript. Terdapat sebuah folder yang dapat anda kunjungi di repository ini yaitu `basic-js`.
+Sejak React JS adalah sebuah library Javascript, maka dari itu perlu untuk kita memahami secara komprehensif sintaks dan penggunaan Javascript. Terdapat sebuah folder yang dapat anda kunjungi di repository ini yaitu `basic-js`
+
+[Basic Javascript](https://github.com/coderaulia/react-bahasa/tree/main/basic-js)
 
 ## Basic React JS
 
@@ -25,3 +27,5 @@ Maka dari sana akan menghasilkan struktur folder dan file React seperti di folde
 Setelah itu untuk menjalankan React Application, jalankan `npm start` di terminal pada folder project `react-basic` tadi. Dan jalankan di browser `localhost:3000`.
 
 Secara default, React akan mengeksekusi index.js, yang mana di dalamnya akan mengimport component yang ada di App.js. Index.js akan mengeksekusi method render dari ReactDOM yang sebelumnya telah diimport ke file `index.html` (id=root) di folder `public`.
+
+Berikut ini adalah tutorial React Basic yang dapat anda kunjungi pada [folder ini](https://github.com/coderaulia/react-bahasa/tree/main/react-basic).

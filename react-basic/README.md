@@ -104,3 +104,19 @@ Langkah selanjutnya adalah mengimport library tersebut ke dalam file komponen ya
 Anda dapat melihat contohnya pada folder example -> `StyledButton.js`.
 
 Selain itu kita juga dapat melakukan pengondisian pada Styled Components secara langsung pada CSS properties. Contohnya `color: ${(props) => (props.invalid ? "red" : "black")};`. Selengkapnya dapat dilihat di folder example -> `StyledProps.js`.
+
+## Debugging React App
+
+Bug adalah sesuatu yang sangat lazim developer temui saat proses development. Untuk itu, sebagai seorang Developer React, penting rasanya untuk memiliki pengetahuan dan skill untuk mengidentifikasi dan menangani bug yang terjadi. Proses ini biasa disebut debugging.
+
+### Error Message di React
+
+Mengetahui makna dari pesan error yang terjadi pada React, adalah salah satu yang perlu diperhatikan. Apakah sebuah error terjadi karena compile error, ada typo dsb.
+
+Jika terjadi error, maka akan muncul pesan error yang terdapat di console. Selanjutnya, kita dapat mengidentifikasi di bagian mana dari kode kita terjadi error. Contohnya: `Error: Cannot read property 'name' of undefined`. Atau `Compile Error: Unexpected token (`. dsb.
+
+Langkah selanjutnya, kita dapat melakukan pencarian Google untuk solusinya, jika memang tidak dapat diselesaikan hanya dengan melakukan perbaikan yang kasat mata di text editor.
+
+Selain itu kita dapat melihat error tersebut di console di dalam browser dengan mengakses developer tools. Karena terkadang tidak hanya error yang bersifat syntax, tetapi juga error yang bersifat logika aplikasi. Sehingga kita juga perlu melakukan analisa dari code flow kita.
+
+Untuk memudahkan dalam proses debugging React App, kita dapat menginstall sebuah tools yaitu React Dev Tools yang dapat diinstall melalui Chrome Web Store.
