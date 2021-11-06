@@ -29,3 +29,9 @@ Setelah itu untuk menjalankan React Application, jalankan `npm start` di termina
 Secara default, React akan mengeksekusi index.js, yang mana di dalamnya akan mengimport component yang ada di App.js. Index.js akan mengeksekusi method render dari ReactDOM yang sebelumnya telah diimport ke file `index.html` (id=root) di folder `public`.
 
 Berikut ini adalah tutorial React Basic yang dapat anda kunjungi pada [folder ini](https://github.com/coderaulia/react-bahasa/tree/main/react-basic).
+
+## Advanced React JS
+
+Untuk belajar mengenai fitur-fitur yang lebih advance di React, anda dapat mengunjungi folder Advanced React JS pada repository ini.
+
+[Advance React](https://github.com/coderaulia/react-bahasa/tree/main/advance-react)

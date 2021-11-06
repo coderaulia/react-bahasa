@@ -120,3 +120,9 @@ Langkah selanjutnya, kita dapat melakukan pencarian Google untuk solusinya, jika
 Selain itu kita dapat melihat error tersebut di console di dalam browser dengan mengakses developer tools. Karena terkadang tidak hanya error yang bersifat syntax, tetapi juga error yang bersifat logika aplikasi. Sehingga kita juga perlu melakukan analisa dari code flow kita.
 
 Untuk memudahkan dalam proses debugging React App, kita dapat menginstall sebuah tools yaitu React Dev Tools yang dapat diinstall melalui Chrome Web Store.
+
+## React Advanced Feature
+
+Ini adalah bagian akhir dari basic React, selanjutnya anda dapat menuju folder lain yaitu advance-react.
+
+[Advance React](https://github.com/coderaulia/react-bahasa/tree/main/advance-react)
